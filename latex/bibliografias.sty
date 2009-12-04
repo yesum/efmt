@@ -1,0 +1,40 @@
+% Bibliografias
+%
+% Pacote com configurações e formatações voltadas a referências bibliográficas.
+%
+% arquivo           : bibliografias.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 13-03-2008
+
+\ProvidesPackage{bibliografias}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Formatação adicional de referências bibliográficas.
+\usepackage{natbib}
+
+% ...
+\usepackage{cite}
+
+% ------------------------------------------------------------------------------
+% Ajuste de formatação de referências bibliográficas.
+\bibpunct{[}{]}{;}{n}{,}{,}
+
+% ------------------------------------------------------------------------------
+% Formatações adicionais.
+
+% Formatação para exibir autores, referência numéria e ano
+% de publicação (citar completo).
+\newcommand{\citarcompl}[1]{\citet*[\citeyear{#1}]{#1}}
+
+% Formatação padrão, para este texto, da citação das referências
+% bibliográficas.
+\newcommand{\citar}[1]{\citep{#1}}
+
+% Formatação padrão, para este texto, da citação do número das
+% referências bibliográficas.
+\newcommand{\citarnum}[1]{\citep{#1}}
+
+

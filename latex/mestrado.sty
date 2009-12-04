@@ -1,0 +1,225 @@
+% Mestrado
+%
+% Pacote com configurações e formatações para o mestrado
+%
+% arquivo           : mestrado.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre
+% Última alteração	: 09-10-2007
+
+\ProvidesPackage{mestrado}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Suporte à língua portuguesa do Brasil, com acentos e hifenização.
+\usepackage[brazilian]{babel}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Suporte à inserção de figuras EPS.
+\usepackage[dvips]{graphicx}
+%   \includegraphics[angle = ..., scale = ..., width = ..., height = ...]{file}
+
+% Formatações extras para fórmulas matemáticas.
+\usepackage{amsmath}
+
+% Formatação adicional de referências bibliográficas.
+\usepackage{natbib}
+    \bibpunct{[}{]}{;}{n}{,}{,}
+\usepackage{cite}
+
+% Ajuste do espaçamento entre linhas.
+\usepackage{setspace}
+
+% Formatação especial para referências.
+\usepackage{prettyref}
+
+% Unidades do Sistema Internacional de Unidades.
+\usepackage{SIunits.alterado}
+
+% Suporte à geração de diagramas de Nassi-Schneiderman.
+\usepackage{nassi}
+
+% Redefinição das legendas.
+\usepackage[font={footnotesize}]{caption}
+
+% Subdivisão de tabelas em múltiplas páginas.
+\usepackage{supertabular}
+
+% Consideração de estruturas de decisão.
+\usepackage{ifthen}
+
+% Considerações adicionais a respeito de matrizes.
+\usepackage{array}
+
+% Espaços especiais para macros.
+\usepackage{xspace}
+
+% Indentação do primeiro parágrafo.
+\usepackage{indentfirst}
+
+% Verificação somente da sintaxe.
+\usepackage{syntonly}
+%   \syntaxonly
+
+% ------------------------------------------------------------------------------
+% Comandos e ambientes para inclusão e identificação de figuras e tabelas.
+
+% Inclusão geral de figura.
+\newcommand{\figura}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento da largura.
+\newcommand{\figuraredim}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 14cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento variável da largura.
+\newcommand{\figuraredimvar}[4]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = #1]{figuras/#4}
+        \legendaref{#2}{#3}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento versão 2.
+\newcommand{\figuraredimdois}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 14cm, height = 10cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento variável versão 2.
+\newcommand{\figuraredimdoisvar}[5]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = #1, height = #2]{figuras/#5}
+        \legendaref{#3}{#4}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento versão 3.
+\newcommand{\figuraredimtres}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 7cm, height = 7cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão de diagramas de Nassi-Schneiderman.
+%   ('\caption' e '\label' deverão ser utilizados no corpo do ambiente, após a
+%   estrutura.)
+\newenvironment{dns}
+{%
+    \begin{figure}[!htbp]
+        \centering
+        \scriptsize
+}
+{%
+    \end{figure}
+    \normalsize
+}
+
+% Inclusão geral de tabela.
+\newenvironment{tabela}[2]{\begin{table}[!htbp]\small\singlespacing\centering \legendaref{#1}{#2} \bigskip}{\doublespacing\normalsize\end{table}}
+                                
+% ------------------------------------------------------------------------------
+% Comandos e ambientes personalizados.
+
+% Formatação para colocação de aspas.
+\newcommand{\aspas}[1]{``#1''}
+
+% Formatação para palavras estrangeiras.
+\newcommand{\estrang}[1]{\textit{#1}}
+
+% Formatação de títulos de tabelas.
+\newcommand{\tittab}[1]{\emph{#1}}
+
+% Formatação de palavras-reservadas, códigos e assemelhados
+% (dentro de um parágrafo).
+\newcommand{\cod}[1]{\texttt{#1}}
+% Antigo: \newcommand{\cod}[1]{\small\textsf{#1}\normalsize}
+
+% Formatação para exibir autores, referência numéria e ano
+% de publicação (citar completo).
+\newcommand{\citarcompl}[1]{\citet*[\citeyear{#1}]{#1}}
+
+% Formatação padrão, para este texto, da citação das referências
+% bibliográficas.
+\newcommand{\citar}[1]{\citep{#1}}
+
+% Formatação padrão, para este texto, da citação do número das
+% referências bibliográficas.
+\newcommand{\citarnum}[1]{\citep{#1}}
+
+% Formatação para destaque (enfatização) de texto.
+\newcommand{\dest}[1]{\emph{#1}}
+
+% Formatação de vetores.
+\newcommand{\vetor}[1]{$\vec #1$}
+
+% Rotacional.
+\newcommand{\rot}[1]{rot~#1}
+
+% Legenda (capitulação) e referência.
+\newcommand{\legendaref}[2]{\caption{#1\label{#2}}}
+
+% Palavras-reservadas, códigos e assemelhados.
+\newenvironment{codigo}{\medskip\sffamily}{\medskip}
+
+% ------------------------------------------------------------------------------
+% Unidades adicionais.
+
+% Segundos, para conveniência no contexto.
+\newcommand{\seconds}{\second}
+
+% Bits e bytes.
+\newcommand{\bits}{bits}
+\newcommand{\bytes}{bytes}
+\newcommand{\Bytes}{Bytes}
+
+% Bits e bytes por segundo.
+\newcommand{\bps}{\bits/\second}
+\newcommand{\Bps}{\bytes/\second}
+
+% ------------------------------------------------------------------------------
+% Notações matemáticas.
+
+\newcommand{\tcom}{t_{com}}
+\newcommand{\tcalc}{t_{calc}}
+\newcommand{\ttot}{t_{tot}}
+
+% ------------------------------------------------------------------------------
+% Formatações das referências.
+\newrefformat{cha}{Capítulo~\ref{#1}}
+\newrefformat{fig}{Figura~\ref{#1}}
+\newrefformat{sec}{secao~\ref{#1}}
+\newrefformat{equ}{(\ref{#1})}
+\newrefformat{tab}{tabela~\ref{#1}}
+\newrefformat{enu}{\ref{#1}}
+
+% Formatação da aparência da página.
+\headheight 2.0cm
+\topmargin -1.8cm % = margem desejada menos 1 in - head  = 3.5 -2.5 -2(+1.0 correcao) = 0.2
+\headsep 1.0cm %separação entre o cabecalho e o texto
+%\textheight 24.2cm
+\textheight 23.3cm
+\oddsidemargin 1.0cm % = margem esquerda desejada - 1 in = 4 -2.5 (-0.5 correcao)= 1.0
+\textwidth 15cm
+\doublespacing

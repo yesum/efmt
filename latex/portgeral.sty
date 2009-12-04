@@ -1,0 +1,29 @@
+% Português Geral
+%
+% Pacote com configurações e formatações padrão personalizadas.
+%
+% arquivo           : portgeral.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre
+% Última alteração	: 13-03-2008
+
+\ProvidesPackage{portgeral}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Suporte à língua portuguesa do Brasil, com acentos e hifenização.
+\usepackage[brazilian]{babel}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Indentação do primeiro parágrafo.
+\usepackage{indentfirst}
+
+% ------------------------------------------------------------------------------
+% Comandos e ambientes personalizados.
+
+% Formatação para palavras estrangeiras.
+\newcommand{\estrang}[1]{\textit{#1}}
