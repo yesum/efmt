@@ -1,0 +1,82 @@
+% Matemática
+%
+% Pacote com configurações e formatações voltadas para expressões e
+% equações matemáticas.
+%
+% arquivo           : matematica.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 22-11-2008
+
+\ProvidesPackage{matematica}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Formatações extras para fórmulas matemáticas.
+\usepackage{amsmath}
+
+% Símbolos adicionais.
+\usepackage{amssymb}
+
+% Considerações adicionais a respeito de matrizes.
+\usepackage{array}
+
+% ------------------------------------------------------------------------------
+% Formatações adicionais.
+
+% Formatação de vetores.
+\newcommand{\vetor}[1]{$\vec #1$}
+
+% Gradiente.
+\newcommand{\gradn}{\ensuremath{\nabla}}
+
+% Divergente.
+\newcommand{\divg}{\ensuremath{\textrm{div\,}}}
+\newcommand{\divgn}{\ensuremath{\nabla \pe}}
+
+% Rotacional.
+%\newcommand{\rot}[1]{rot~#1}
+\newcommand{\rot}{\ensuremath{\textrm{rot\,}}}
+\newcommand{\rotn}{\ensuremath{\nabla \pv}}
+
+% Laplaciano.
+\newcommand{\lapln}{\ensuremath{\nabla^2}}
+
+% Derivada parcial.
+\newcommand{\dvp}[2]{\ensuremath{\frac{\partial #1}{\partial #2}}}
+
+% Derivada parcial segunda.
+\newcommand{\dvpseg}[2]{\ensuremath{\frac{\partial^2 #1}{\partial #2^2}}}
+
+% Produto escalar.
+\newcommand{\pe}{\ensuremath{\,\cdot\,}}
+
+% Produto vetorial.
+\newcommand{\pv}{\ensuremath{\,\times\,}}
+
+% Elemento de linha escalar e vetorial.
+\newcommand{\dl}{\ensuremath{\mathrm{d}l}\xspace}
+\newcommand{\vdl}{\ensuremath{\mathrm{d}\vec{l}}\xspace}
+
+% Elemento de área.
+\newcommand{\dS}{\ensuremath{\mathrm{d}\vec{S}}\xspace}
+
+% Elemento de volume.
+\newcommand{\dtau}{\ensuremath{\mathrm{d}\tau}\xspace}
+
+% Espaço vertical (para uso em ambientes com múltiplas equações
+% consecutivas).
+\newcommand{\nl}{\\[12pt]}
+
+% Versus.
+\newcommand{\versus}{\ensuremath{\,\times\,}}
+
+% Seno, em português.
+\newcommand{\sen}{\ensuremath{\mathrm{sen}}}
+
+% ------------------------------------------------------------------------------
+% Ajustes de formatação.
+
+% Espaçamento em matrizes de equações.
+\setlength\arraycolsep{2pt}

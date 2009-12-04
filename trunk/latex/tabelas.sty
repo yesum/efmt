@@ -1,0 +1,25 @@
+% Tabelas
+%
+% Pacote com configurações e formatações voltadas para tabelas.
+%
+% arquivo           : tabelas.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 19-08-2008
+
+\ProvidesPackage{tabelas}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Subdivisão de tabelas em múltiplas páginas.
+\usepackage{supertabular}
+
+% ------------------------------------------------------------------------------
+% Formatações e ambientes disponibilizados.
+
+% Formatação de títulos de tabelas.
+\newcommand{\tittab}[1]{\emph{#1}}
+
+% Inclusão geral de tabela.
+\newenvironment{tabela}[2]{\begin{table}[!htbp]\small\singlespacing\centering \legendaref{#1}{#2} \bigskip}{\end{table}}

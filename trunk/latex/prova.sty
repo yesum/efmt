@@ -1,0 +1,90 @@
+% Prova
+%
+% Pacote com configurações e formatações voltadas para a edição de provas.
+%
+% arquivo           : provas.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 12-06-2009
+
+\ProvidesPackage{prova}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+\usepackage{portgeral}
+\usepackage{misc}
+\usepackage{matematica}
+\usepackage{unidades}
+\usepackage{figuras}
+\usepackage[utf8]{inputenc}
+
+% ------------------------------------------------------------------------------
+% Formatação da aparência da página.
+%   \headheight 2.0cm
+%   \topmargin -1.8cm % = margem desejada menos 1 in - head  = 3.5 -2.5 -2(+1.0 correcao) = 0.2
+%   \headsep 1.0cm %separação entre o cabecalho e o texto
+%   \textheight 24.2cm
+%   \oddsidemargin 1.0cm % = margem esquerda desejada - 1 in = 4 -2.5 (-0.5 correcao)= 1.0
+%   \textwidth 15cm
+%   \doublespacing
+
+% ------------------------------------------------------------------------------
+% Ambiente para questões.
+
+\newcounter{questao}
+\newenvironment{questao}{\stepcounter{questao}\noindent\textbf{Quest\~ao \thequestao. }\nolinebreak}{\bigskip}
+
+% ------------------------------------------------------------------------------
+% Entrada para referências por 'prettyref'.
+\newrefformat{que}{Questão~\ref{#1}}
+
+% ------------------------------------------------------------------------------
+% Comandos adicionais.
+
+% Valor da questão.
+\newcommand{\valor}[1]{\emph{(#1)~}}
+
+% ------------------------------------------------------------------------------
+% Trechos pré-definidos.
+
+% Folha de rosto.
+\newcommand{\folhaderosto}[1][90]{%
+    \maketitle
+    
+    \thispagestyle{empty}
+
+    {
+    Nome: \underline{\hspace{7.5cm}} \hfill RA: \underline{\hspace{3cm}}\bigskip
+
+    Assinatura: \underline{\hspace{6.6cm}}\bigskip
+    }
+
+    \vfill
+
+    {\onehalfspacing
+    \textbf{Orientações:}
+
+    \begin{itemize}
+        \item Duração: #1 min.
+        \item Consulta: a duas folhas próprias manuscritas frente e verso.
+        \item Objeto de escrita: caneta ou lápis.
+        \item Se algum dado faltar, anote o fato e adote um valor coerente.
+        \item Se alguma informação faltar, anote o fato e considere, de preferência, o contexto abordado no laboratório.
+        \item Escrever os textos com palavras próprias. Isto influencia na avaliação.
+        \item \dest{Atenção à escrita!} O texto deverá ficar claro e preciso para quem lê. Isto também influencia na avaliação.
+        \item Tudo o que for escrito será considerado.
+    \end{itemize}
+    }
+
+    \vfill
+
+    \begin{center}
+        \LARGE\itshape\center
+        Boa Prova!!!
+    \end{center}
+
+    \vfill
+
+    \pagebreak
+}

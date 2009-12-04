@@ -1,0 +1,76 @@
+% Figuras
+%
+% Pacote com configurações e formatações voltadas para o uso e desenho
+% de figuras.
+%
+% arquivo           : figuras.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 04-04-2008
+
+\ProvidesPackage{figuras}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+% Suporte à inserção de figuras EPS.
+\usepackage[dvips]{graphicx}
+%\usepackage[pdftex]{graphicx}
+%   \includegraphics[angle = ..., scale = ..., width = ..., height = ...]{file}
+
+% ------------------------------------------------------------------------------
+% Comandos e ambientes para inclusão e identificação de figuras.
+
+% Inclusão geral de figura.
+\newcommand{\figura}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento da largura.
+\newcommand{\figuraredim}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 14cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento variável da largura.
+\newcommand{\figuraredimvar}[4][10cm]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = #1]{figuras/#4}
+        \legendaref{#2}{#3}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento versão 2.
+\newcommand{\figuraredimdois}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 14cm, height = 10cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento variável versão 2.
+\newcommand{\figuraredimdoisvar}[5]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = #1, height = #2]{figuras/#5}
+        \legendaref{#3}{#4}
+    \end{figure}
+}
+
+% Inclusão geral de figura com redimensionamento versão 3.
+\newcommand{\figuraredimtres}[3]{%
+    \begin{figure}[!htbp]
+        \centering
+        \includegraphics[width = 7cm, height = 7cm]{figuras/#3}
+        \legendaref{#1}{#2}
+    \end{figure}
+}

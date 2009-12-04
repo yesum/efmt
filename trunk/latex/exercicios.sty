@@ -1,0 +1,37 @@
+% Exercícios
+%
+% Pacote com configurações e formatações voltadas para a edição de listas de
+% exercícios.
+%
+% arquivo           : exercicios.sty
+% autor             : Marcelo P. Trevizan
+% tipo de documento : livre, aberto
+% Última alteração	: 31-03-2008
+
+\ProvidesPackage{exercicios}
+
+% ------------------------------------------------------------------------------
+% Pacotes.
+
+\usepackage{portgeral}
+\usepackage{misc}
+\usepackage{matematica}
+\usepackage{unidades}
+\usepackage{figuras}
+
+% ------------------------------------------------------------------------------
+% Formatação da aparência da página.
+
+\onehalfspacing
+\addtolength{\voffset}{-1.0in}
+\addtolength{\voffset}{-\headheight}
+\addtolength{\voffset}{-\headsep}
+\addtolength{\textheight}{1.0in}
+\addtolength{\textheight}{\headheight}
+\addtolength{\textheight}{\headsep}
+
+% ------------------------------------------------------------------------------
+% Ambiente para os exercícios.
+
+\newcounter{exercicio}
+\newenvironment{exercicio}{\stepcounter{exercicio}\noindent\textbf{Exerc\'icio \theexercicio. }\nolinebreak}{\bigskip}
