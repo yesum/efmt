@@ -19,16 +19,14 @@
 \usepackage{xspace}
 
 % Unidades do SI.
-\usepackage[amssymb]{SIunitsx}
+%\usepackage[amssymb]{SIunitsx}
+\usepackage[amssymb]{siunitx}
 
 % ------------------------------------------------------------------------------
 % Configurações adicionais de pacotes.
 
 % ------------------------------------------------------------------------------
 % Unidades adicionais.
-
-% Segundos, para conveniência no contexto.
-\newcommand{\seconds}{\second}
 
 % Bits e bytes.
 \newcommand{\bits}{bits}
@@ -40,4 +38,4 @@
 \newcommand{\Bps}{\bytes\per\second}
 
 % Ampère-espira.
-\addunit{\ampereesp}{\ampere{}\mathrm{esp}}
+\newunit{\ampereesp}{\ampere{}\mathrm{esp}}
