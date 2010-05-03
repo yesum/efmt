@@ -5,19 +5,19 @@
 % arquivo           : provas.sty
 % autor             : Marcelo P. Trevizan
 % tipo de documento : livre, aberto
-% Última alteração	: 12-06-2009
+% Última alteração	: 28-04-2010
 
 \ProvidesPackage{prova}
 
 % ------------------------------------------------------------------------------
 % Pacotes.
 
-\usepackage{portgeral}
+%\usepackage{portgeral}
 \usepackage{misc}
 \usepackage{matematica}
 \usepackage{unidades}
 \usepackage{figuras}
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 
 % ------------------------------------------------------------------------------
 % Formatação da aparência da página.
@@ -32,8 +32,10 @@
 % ------------------------------------------------------------------------------
 % Ambiente para questões.
 
-\newcounter{questao}
-\newenvironment{questao}{\stepcounter{questao}\noindent\textbf{Quest\~ao \thequestao. }\nolinebreak}{\bigskip}
+\newcounter{cquestao}
+\newcommand{\questao}{\bigskip\stepcounter{cquestao}\noindent\textbf{Questão \thecquestao. }\nolinebreak}
+%\newcommand{\questao*}[1]{\bigskip\noindent\textbf{Questão #1. }\nolinebreak}
+\newenvironment{equestao}{\stepcounter{cquestao}\noindent\textbf{Quest\~ao \thecquestao. }\nolinebreak}{\bigskip}
 
 % ------------------------------------------------------------------------------
 % Entrada para referências por 'prettyref'.
@@ -43,7 +45,7 @@
 % Comandos adicionais.
 
 % Valor da questão.
-\newcommand{\valor}[1]{\emph{(#1)~}}
+\newcommand{\valor}[1]{\emph{(#1)}}
 
 % ------------------------------------------------------------------------------
 % Trechos pré-definidos.
