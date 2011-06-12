@@ -5,7 +5,7 @@
 % arquivo           : misc.sty
 % autor             : Marcelo P. Trevizan
 % tipo de documento : livre, aberto
-% Última alteração	: 15-06-2010
+% Última alteração	: 12-06-2011
 
 \ProvidesPackage{misc}
 
@@ -47,5 +47,6 @@
 \newrefformat{alg}{Algoritmo~\ref{#1}}
 \newrefformat{enu}{\ref{#1}}
 
-% Alteração da contagem da enumeração para a forma alfabética.
+% Alteração da contagem da enumeração para outros formatos.
 \newcommand{\alfaenum}{\renewcommand{\theenumi}{\alph{enumi}}}
+\newcommand{\Romanenum}{\renewcommand{\theenumi}{\Roman{enumi}}}
