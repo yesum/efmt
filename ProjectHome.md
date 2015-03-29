@@ -1,0 +1,1 @@
+Estilos, classes, "templates" para formatações extras em LaTeX e LyX.
